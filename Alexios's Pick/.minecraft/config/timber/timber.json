@@ -1,0 +1,22 @@
+{
+  "mod": {
+    "reverseSneaking": {
+      "comment": " Timber Mod will ENABLE itself if you ARE sneaking if this value is true. Default: false.",
+      "value": false
+    },
+    "enableMod": {
+      "comment": " Timber Mod will disable itself if this value is set to false. Default: true.",
+      "value": true
+    },
+    "damageAxe": {
+      "comment": " Timber Mod will damage the axe for the amount of blocks chopped if this value is true. Default: true.",
+      "value": true
+    }
+  },
+  "creative": {
+    "dropItems": {
+      "comment": " Timber Mod will drop items in creative mode aswell, true to enable, false to disable. Default: false.",
+      "value": false
+    }
+  }
+}

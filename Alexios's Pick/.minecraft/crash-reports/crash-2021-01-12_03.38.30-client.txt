@@ -1,0 +1,275 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 1/12/21 3:38 AM
+Description: Initializing game
+
+net.fabricmc.loader.api.EntrypointException: Exception while loading entries for entrypoint 'main' provided by 'bssentials'
+	at net.fabricmc.loader.EntrypointStorage.getEntrypointContainers(EntrypointStorage.java:193)
+	at net.fabricmc.loader.FabricLoader.getEntrypointContainers(FabricLoader.java:272)
+	at net.fabricmc.loader.entrypoint.minecraft.hooks.EntrypointUtils.invoke0(EntrypointUtils.java:44)
+	at net.fabricmc.loader.entrypoint.minecraft.hooks.EntrypointUtils.invoke(EntrypointUtils.java:36)
+	at net.fabricmc.loader.entrypoint.minecraft.hooks.EntrypointClient.start(EntrypointClient.java:32)
+	at net.minecraft.class_310.<init>(class_310.java:437)
+	at net.minecraft.client.main.Main.main(Main.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.fabricmc.loader.game.MinecraftGameProvider.launch(MinecraftGameProvider.java:224)
+	at net.fabricmc.loader.launch.knot.Knot.init(Knot.java:141)
+	at net.fabricmc.loader.launch.knot.KnotClient.main(KnotClient.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.multimc.onesix.OneSixLauncher.launchWithMainClass(OneSixLauncher.java:196)
+	at org.multimc.onesix.OneSixLauncher.launch(OneSixLauncher.java:231)
+	at org.multimc.EntryPoint.listen(EntryPoint.java:143)
+	at org.multimc.EntryPoint.main(EntryPoint.java:34)
+Caused by: java.lang.NoClassDefFoundError: net/minecraft/text/Text
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at net.fabricmc.loader.util.DefaultLanguageAdapter.create(DefaultLanguageAdapter.java:45)
+	at net.fabricmc.loader.EntrypointStorage$NewEntry.create(EntrypointStorage.java:114)
+	at net.fabricmc.loader.EntrypointStorage$NewEntry.getOrCreate(EntrypointStorage.java:101)
+	at net.fabricmc.loader.EntrypointStorage.getEntrypointContainers(EntrypointStorage.java:186)
+	... 21 more
+Caused by: java.lang.ClassNotFoundException: net.minecraft.text.Text
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at net.fabricmc.loader.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:168)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 27 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at net.fabricmc.loader.EntrypointStorage.getEntrypointContainers(EntrypointStorage.java:193)
+	at net.fabricmc.loader.FabricLoader.getEntrypointContainers(FabricLoader.java:272)
+	at net.fabricmc.loader.entrypoint.minecraft.hooks.EntrypointUtils.invoke0(EntrypointUtils.java:44)
+	at net.fabricmc.loader.entrypoint.minecraft.hooks.EntrypointUtils.invoke(EntrypointUtils.java:36)
+	at net.fabricmc.loader.entrypoint.minecraft.hooks.EntrypointClient.start(EntrypointClient.java:32)
+	at net.minecraft.class_310.<init>(class_310.java:437)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.main.Main.main(Main.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.fabricmc.loader.game.MinecraftGameProvider.launch(MinecraftGameProvider.java:224)
+	at net.fabricmc.loader.launch.knot.Knot.init(Knot.java:141)
+	at net.fabricmc.loader.launch.knot.KnotClient.main(KnotClient.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.multimc.onesix.OneSixLauncher.launchWithMainClass(OneSixLauncher.java:196)
+	at org.multimc.onesix.OneSixLauncher.launch(OneSixLauncher.java:231)
+	at org.multimc.EntryPoint.listen(EntryPoint.java:143)
+	at org.multimc.EntryPoint.main(EntryPoint.java:34)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.4
+	Minecraft Version ID: 1.16.4
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_271, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 701087472 bytes (668 MB) / 1783627776 bytes (1701 MB) up to 2837446656 bytes (2706 MB)
+	CPUs: 16
+	JVM Flags: 3 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xms512m -Xmx3044m
+	Fabric Mods: 
+		additionalbars: Additional Bars 1.0.1
+		advanced_runtime_resource_pack: Runtime Resource Pack 0.2.6
+		adventurez: AdventureZ 1.1.5
+		amecsapi: Amecs API 1.1.1+mc1.16-rc1
+		angerable-patch: Angerable Patch 1.1.0-1.16.4
+		architectury: Architectury 1.3.77
+		artifacts: Artifacts 2.1.0+1.16.4-fabric
+		artifice: Artifice 0.13.1+1.16.2-rc1
+		autoconfig1u: Auto Config v1 Updated 3.3.1
+		backslot: BackSlot 1.1.8
+		bedrockify: BedrockIfy 0.2.1
+		bedspreads: Bedspreads 1.3.1-1.16.4
+		bettercaves: YUNG's Better Caves 1.16.2-1.0.3
+		betterdroppeditems: Better Dropped Items 1.2.4-1.16.2
+		betterend: Better End 0.8.5-beta
+		betterf3: BetterF3 1.1.1
+		bettermineshafts: YUNG's Better Mineshafts 1.16.4-1.0
+		betternether: Better Nether 5.0.4
+		biomemakeover: Biome Makeover 1.16.4-1.2.2
+		blockus: Blockus 2.0.2+1.16.4
+		blur: Blur (Fabric) 2.0.0
+		bssentials: Bssentials 3.x
+		byg: BYG 1.1.3
+		campanion: Campanion 1.3.1+build.51
+		cardinal-components-base: Cardinal Components API (base) 2.7.9
+		cardinal-components-entity: Cardinal Components API (entities) 2.7.9
+		cardinal-components-item: Cardinal Components API (items) 2.7.9
+		cavebiomes: Cave Biomes 0.5.1
+		cdsam: Survival Additions 1.2.2
+		charm: Charm 2.2.2
+		chat_heads: Chat Heads 0.2.1+1.16.2
+		cherishedworlds: Cherished Worlds 1.3.0-1.16.4
+		cinderscapes: Cinderscapes 1.3.0+build.51
+		cleardespawn: Clear Despawn 1.16.4-fabric0.25.1-1.1.1
+		cloth-basic-math: Cloth Basic Math 0.5.1
+		cloth-client-events-v0: Cloth Client Events v0 1.4.9
+		cloth-config2: Cloth Config v4 4.8.3
+		cloth-dynamic-registry-api-v1: Cloth Dynamic Registry API v1 1.2.1
+		com_electronwill_night-config_core: core 3.6.2
+		com_electronwill_night-config_toml: toml 3.6.2
+		com_moandjiezana_toml_toml4j: toml4j 0.7.2
+		com_udojava_evalex: EvalEx 2.5
+		continuebutton: Continue Button 1.0.2
+		controlling: Controlling For Fabric 1.1.2
+		cotton: Cotton 1.1.0
+		cotton-cauldron: Cotton Cauldron 1.1.0
+		cotton-commons: Cotton Commons 1.0.4
+		cotton-config: Cotton Config 1.0.0-rc.7
+		cotton-datapack: Cotton Datapack 1.0.7
+		cotton-logging: Cotton Logging 1.0.0-rc.4
+		cotton-player-events: Cotton Player Events 1.0.2
+		craftpresence: CraftPresence 1.7.5
+		craftycuisine: Crafty Cuisine b1.1
+		crowdin-translate: CrowdinTranslate 1.2
+		custom-crosshair-mod: Custom Crosshair Mod 1.0.3-fabric
+		disable_custom_worlds_advice: Disable Custom Worlds Advice 1.2
+		dynamicsoundfilters: Dynamic Sound Filters 1.1.3+1.16.2
+		earthtojavamobs: Earth2Java 1.6.0+1.16.4
+		eggtab: Egg Tab 2.1.0+1.16-fabric
+		fabric: Fabric API 0.29.3+1.16
+		fabric-api-base: Fabric API Base 0.2.0+ab87788d3a
+		fabric-biome-api-v1: Fabric Biome API (v1) 3.1.0+2e23b97c3a
+		fabric-blockrenderlayer-v1: Fabric BlockRenderLayer Registration (v1) 1.1.4+c6a8ea8995
+		fabric-command-api-v1: Fabric Command API (v1) 1.0.9+6a2618f53a
+		fabric-commands-v0: Fabric Commands (v0) 0.2.1+cbe9176f3a
+		fabric-containers-v0: Fabric Containers (v0) 0.1.9+a03e98793a
+		fabric-content-registries-v0: Fabric Content Registries (v0) 0.2.0+e77439c73a
+		fabric-crash-report-info-v1: Fabric Crash Report Info (v1) 0.1.2+b7f9825d3a
+		fabric-dimensions-v1: fabric-dimensions-v1 2.0.1+9a6c75813a
+		fabric-entity-events-v1: Fabric Entity Events (v1) 1.0.2+8004b36d3a
+		fabric-events-interaction-v0: Fabric Events Interaction (v0) 0.4.1+6a2618f53a
+		fabric-events-lifecycle-v0: Fabric Events Lifecycle (v0) 0.2.0+16acbe5b95
+		fabric-game-rule-api-v1: Fabric Game Rule API (v1) 1.0.5+cbe9176f3a
+		fabric-item-api-v1: Fabric Item API (v1) 1.2.0+6a2618f53a
+		fabric-item-groups-v0: Fabric Item Groups (v0) 0.2.2+cbe9176f3a
+		fabric-key-binding-api-v1: Fabric Key Binding API (v1) 1.0.1+730711c63a
+		fabric-keybindings-v0: Fabric Key Bindings (v0) 0.2.0+3fa9f7c595
+		fabric-language-kotlin: Fabric Language Kotlin 1.4.21+build.1
+		fabric-lifecycle-events-v1: Fabric Lifecycle Events (v1) 1.2.0+74cc3b2095
+		fabric-loot-tables-v1: Fabric Loot Tables (v1) 1.0.1+6a2618f53a
+		fabric-mining-levels-v0: Fabric Mining Levels (v0) 0.1.2+b764ce9995
+		fabric-models-v0: Fabric Models (v0) 0.2.0+cbe9176f3a
+		fabric-networking-api-v1: Fabric Networking API (v1) 1.0.0+4358fbc63a
+		fabric-networking-blockentity-v0: Fabric Networking Block Entity (v0) 0.2.7+a03e98793a
+		fabric-networking-v0: Fabric Networking (v0) 0.3.1+2a4333d33a
+		fabric-object-builder-api-v1: Fabric Object Builder API (v1) 1.9.2+6a2618f53a
+		fabric-object-builders-v0: Fabric Object Builders (v0) 0.7.1+6a2618f53a
+		fabric-particles-v1: Fabric Particles (v1) 0.2.3+cbe9176f3a
+		fabric-registry-sync-v0: Fabric Registry Sync (v0) 0.7.3+be155ae23a
+		fabric-renderer-api-v1: Fabric Renderer API (v1) 0.4.0+cbe9176f3a
+		fabric-renderer-indigo: Fabric Renderer - Indigo 0.4.3+6a2618f53a
+		fabric-renderer-registries-v1: Fabric Renderer Registries (v1) 2.2.0+f8ac1db23a
+		fabric-rendering-data-attachment-v1: Fabric Rendering Data Attachment (v1) 0.1.4+6a2618f53a
+		fabric-rendering-fluids-v1: Fabric Rendering Fluids (v1) 0.1.12+6a2618f53a
+		fabric-rendering-v0: Fabric Rendering (v0) 1.1.1+6a2618f53a
+		fabric-rendering-v1: Fabric Rendering (v1) 1.5.0+c26373133a
+		fabric-resource-loader-v0: Fabric Resource Loader (v0) 0.4.1+0d4d7e343a
+		fabric-screen-handler-api-v1: Fabric Screen Handler API (v1) 1.1.0+6a2618f53a
+		fabric-structure-api-v1: Fabric Structure API (v1) 1.1.3+cbe9176f3a
+		fabric-tag-extensions-v0: Fabric Tag Extensions (v0) 1.1.0+e77439c73a
+		fabric-textures-v0: Fabric Textures (v0) 1.0.5+a4467d2a3a
+		fabric-tool-attribute-api-v1: Fabric Tool Attribute API (v1) 1.2.5+6a2618f53a
+		fabricloader: Fabric Loader 0.10.8
+		firstperson: FirstpersonModel 1.3.0
+		gbfabrictools: GBfabrictools 1.3.1+1.16.4
+		illuminations: Illuminations 1.4
+		image2map: Image2Map 0.1.2
+		imm_ptl_core: Immersive Portals Core 0.55
+		immersive_portals: Immersive Portals 0.55
+		inventorypause: Inventory Pause 1.0.4
+		jankson: Jankson 3.0.1+j1.2.0
+		kirin: Kirin UI 1.7-1.16.2
+		libgui: LibGui 1.8.0+20w12a
+		libstructure: Libstructure 1.3
+		mambience: MAmbience 2.1.0+1.16.2
+		manhunt: Manhunt Fabric 0.6.0
+		midnight-hats: Midnight Hats 2.0.1
+		minecraft: Minecraft 1.16.4
+		mm: Manningham Mills 2.1
+		modmenu: Mod Menu 1.14.13+build.19
+		moreberries: More Berries 1.3.4
+		morepaths: More Paths 0.0.3
+		multi_item_lin: Multi Item Lin 1.0.0
+		netherite_plus: Netherite Plus Mod 1.2.0
+		nomoreglowingpots: No More Glowing Pots 1.0.2
+		nourish: Nourish 1.2.0
+		org_codehaus_groovy_groovy: groovy 3.0.3
+		org_codehaus_groovy_groovy-jsr223: groovy-jsr223 3.0.3
+		org_jetbrains_annotations: annotations 20.0.0
+		org_jetbrains_kotlin_kotlin-reflect: kotlin-reflect 1.4.21
+		org_jetbrains_kotlin_kotlin-stdlib: kotlin-stdlib 1.4.21
+		org_jetbrains_kotlin_kotlin-stdlib-jdk7: kotlin-stdlib-jdk7 1.4.21
+		org_jetbrains_kotlin_kotlin-stdlib-jdk8: kotlin-stdlib-jdk8 1.4.21
+		org_jetbrains_kotlinx_kotlinx-coroutines-core-jvm: kotlinx-coroutines-core-jvm 1.4.2
+		org_jetbrains_kotlinx_kotlinx-coroutines-jdk8: kotlinx-coroutines-jdk8 1.4.2
+		oro_config: OroArmor Config -0df99c92b1-1
+		petowner: Pet Owner 1.7.1-1.16.2+
+		platos: Plato's Transporters 1.6.4
+		presencefootsteps: Presence Footsteps r29+1.16.4
+		reach-entity-attributes: Reach Entity Attribute 1.0.1
+		realisticfirespread: Realistic Fire Spread 1.16.4-2
+		rebind_all_the_keys: RebindAllTheKeys 1.0.2
+		repurposed_structures: Repurposed Structures 1.16.4-1.7.3
+		rocks: This Rocks! 1.2.2
+		roughlyenoughitems: Roughly Enough Items 5.8.10
+		roughlyenoughitems-api: REI (API) 5.8.10
+		roughlyenoughitems-default-plugin: REI (Default Plugin) 5.8.10
+		roughlyenoughitems-runtime: REI (Runtime) 5.8.10
+		roughlyenoughresources: Roughly Enough Resources 2.1.3
+		sandwichable: Sandwichable 1.1.2
+		satin: Satin 1.5.1
+		secretrooms: Secret Rooms 0.9.2+1.16.2
+		simplexterrain: Simplex Terrain 0.7.2
+		sit: Sit 1.16.2-9
+		slight-gui-modifications: 'Slight' GUI Modifications 1.6.1
+		smithee: Smithee 0.1.5
+		smoothscrollingeverywhere: Smooth Scrolling Everywhere 3.0.3-unstable
+		soulbound: Soulbound 1.0.1
+		static-content: Static Content 1.0.1-1.16.2
+		staticdata: Static Data 1.1.2
+		step-height-entity-attribute: Step Height Entity Attribute 1.0.0
+		stitchedsnow: Stiched Snow 1.0.0
+		strawdummy: Straw Dummy 1.4.0
+		terraform-shapes-api-v1: Terraform Shapes API (v1) 1.0.0+build.1
+		terraform-wood-api-v1: Terraform Wood API (v1) 1.0.0+build.1
+		timber: Timber Mod 1.8.0
+		tk_valoeghese_zoesteriaconfig: ZoesteriaConfig 1.3.2
+		trapexpansion: Trap Expansion 1.3.2
+		trinkets: Trinkets 2.6.7
+		villagernames: Villager Names 1.2.2
+		voyager: Voyager 1.0.0
+		waila: Hwyla 1.9.22
+		wolveswitharmor: Wolves With Armor 1.5.2-1.16.2
+		woodarmor: Wooden Armors 1.0.0
+		yungsapi: YUNG's API 1.16.4-Fabric-1
+		zoob: Monster Of The Ocean Depths 2.5.0
+	Launched Version: MultiMC5
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: NO CONTEXT
+	GL Caps: 
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fabric'
+	Type: Client (map_client.txt)
+	CPU: <unknown>

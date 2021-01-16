@@ -1,0 +1,10 @@
+{
+  "sneakToStopDamage": true,
+  "requiredArmorLosesDurabilityWhenWalking": true,
+  "requiredToWalk": {
+    "boots": true,
+    "leggings": true,
+    "chestPlate": false,
+    "helmet": false
+  }
+}
